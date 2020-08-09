@@ -1,24 +1,41 @@
 import React from 'react';
 import './App.css';
 
+// Lib
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 // components
 import Header from './Header';
 
 function App() {
   return (
-    <div>
-      
-      {/* Header */}
-      <Header />
+    <div className="App">
 
-      {/* Tinder cards */}
+      <Router>
+        {/* Header */}
+        <Header />
 
-      {/* Buttons */}
+        <Switch>
+          <Route path="/">
+            <p>i am home page</p>
+          </Route>
+        </Switch>
 
-      {/* Chat screen */}
+        <Switch>
+          <Route path="/chat">
+            <p>i am chat page</p>
+          </Route>
+        </Switch>
 
-      {/* Individual chat */}
+        {/* Tinder cards */}
 
+        {/* Buttons */}
+
+        {/* Chat screen */}
+
+        {/* Individual chat */}
+
+      </Router>
     </div>
   );
 }
