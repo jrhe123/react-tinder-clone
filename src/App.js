@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // components
 import Header from './Header';
+import TinderCards from './TinderCards';
+import SwipeButtons from './SwipeButtons';
 
 function App() {
   return (
@@ -16,22 +18,21 @@ function App() {
       <Router>
         <Switch>
 
+          {/* Chat screen */}
+          {/* Individual chat */}
           <Route path="/chat">
             <p>i am chat page</p>
           </Route>
 
           <Route path="/">
-            <p>i am home page</p>
+          {/* Tinder cards */}
+            <TinderCards />
+            {/* Buttons */}
+            <SwipeButtons />
           </Route>
         </Switch>
 
-        {/* Tinder cards */}
-
-        {/* Buttons */}
-
-        {/* Chat screen */}
-
-        {/* Individual chat */}
+        
       </Router>
     </div>
   );
