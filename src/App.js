@@ -10,20 +10,18 @@ import Header from './Header';
 function App() {
   return (
     <div className="App">
+      {/* Header */}
+      <Header />
 
       <Router>
-        {/* Header */}
-        <Header />
-
         <Switch>
-          <Route path="/">
-            <p>i am home page</p>
-          </Route>
-        </Switch>
 
-        <Switch>
           <Route path="/chat">
             <p>i am chat page</p>
+          </Route>
+
+          <Route path="/">
+            <p>i am home page</p>
           </Route>
         </Switch>
 
@@ -34,7 +32,6 @@ function App() {
         {/* Chat screen */}
 
         {/* Individual chat */}
-
       </Router>
     </div>
   );
