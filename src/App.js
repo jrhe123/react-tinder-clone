@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // components
 import Header from './Header';
+import Chats from './Chats';
+import ChatScreen from './ChatScreen';
 import TinderCards from './TinderCards';
 import SwipeButtons from './SwipeButtons';
 
@@ -14,17 +16,28 @@ function App() {
     <div className="App">
       <Router>
 
-        {/* Header */}
-        <Header />
-
         <Switch>
-          {/* Chat screen */}
+          
           {/* Individual chat */}
-          <Route path="/chat">
-            <p>i am chat page</p>
+          <Route path="/chat/:person">
+            {/* Header */}
+            <Header backButton="/chat" />
+            <ChatScreen />
           </Route>
 
+
+          {/* Chat screen */}
+          <Route path="/chat">
+            {/* Header */}
+            <Header backButton="/" />
+            <Chats />
+          </Route>
+
+
+          {/* Home screen */}
           <Route path="/">
+            {/* Header */}
+            <Header />
             {/* Tinder cards */}
             <TinderCards />
             {/* Buttons */}
