@@ -8,7 +8,7 @@ import logo from './logo.png';
 import PersonIcon from '@material-ui/icons/Person'
 import ForumIcon from '@material-ui/icons/Forum'
 import IconButton from '@material-ui/core/IconButton';
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -19,20 +19,24 @@ const Header = () => {
           className="header__icon"
         />
       </IconButton>
-      <img
-        src={logo}
-        alt="Jiarong He"
-        style={{
-          width: 60,
-          objectFit: 'contain'
-        }}
-      />
-      <IconButton>
-        <ForumIcon
-          fontSize="large"
-          className="header__icon"
+      <Link to="/">
+        <img
+          src={logo}
+          alt="Jiarong He"
+          style={{
+            width: 60,
+            objectFit: 'contain'
+          }}
         />
-      </IconButton>
+      </Link>
+      <Link to="/chat">
+        <IconButton>
+          <ForumIcon
+            fontSize="large"
+            className="header__icon"
+          />
+        </IconButton>
+      </Link>
     </div>
   )
 }
